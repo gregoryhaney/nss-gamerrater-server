@@ -1,0 +1,29 @@
+[
+    {
+        "model": "raterprojectapi.gamer",
+        "pk": 1,
+        "fields": {
+            "handle": "HedgeHog101",
+            "bio": "I love gaming, plus I rock.",
+            "user": 1
+        }
+    },
+    {
+        "model": "raterprojectapi.gamer",
+        "pk": 2,
+        "fields": {
+            "handle": "BeastlyOne",
+            "bio": "I'm a punk chick.",
+            "user": 2
+        }
+    },
+    {
+        "model": "raterprojectapi.gamer",
+        "pk": 3,
+        "fields": {
+            "handle": "Rockabilly",
+            "bio": "Music lover at heart.",
+            "user": 3
+        }
+    }
+]

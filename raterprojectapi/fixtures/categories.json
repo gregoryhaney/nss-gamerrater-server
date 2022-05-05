@@ -1,0 +1,79 @@
+[
+    {
+        "model": "raterprojectapi.category",
+        "pk": 1,
+        "fields": {
+            "cat_name": "Board game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 2,
+        "fields": {
+            "cat_name": "Role-playing game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 3,
+        "fields": {
+            "cat_name": "Strategy game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 4,
+        "fields": {
+            "cat_name": "Dice game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 5,
+        "fields": {
+            "cat_name": "Miniature game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 6,
+        "fields": {
+            "cat_name": "Card game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 7,
+        "fields": {
+            "cat_name": "Deck building game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 8,
+        "fields": {
+            "cat_name": "Sports game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 9,
+        "fields": {
+            "cat_name": "Adventure game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 10,
+        "fields": {
+            "cat_name": "Cooperative game"
+        }
+    },
+    {
+        "model": "raterprojectapi.category",
+        "pk": 11,
+        "fields": {
+            "cat_name": "Battle game"
+        }
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "me@me.com",
+            "password": "me",
+            "email": "me@me.com",
+            "last_login": null,
+            "is_superuser": false,
+            "first_name": "Manny",
+            "last_name": "Ferrari",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-08-28T14:51:39.111989Z"  
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "you@you.com",
+            "password": "you",
+            "email": "you@you.com",
+            "last_login": null,
+            "is_superuser": false,
+            "first_name": "Butch",
+            "last_name": "Cavender",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-08-28T14:51:39.111989Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "username": "us@us.net",
+            "password": "us",
+            "email": "us@us.net",
+            "last_login": null,
+            "is_superuser": false,
+            "first_name": "Paige",
+            "last_name": "Jones",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-08-28T14:51:39.111989Z"
+        }
+    }
+]

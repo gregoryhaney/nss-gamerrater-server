@@ -1,0 +1,29 @@
+[
+    {
+        "model": "raterprojectapi.review",
+        "pk": 1,
+        "fields": {
+            "review_body": "This game is amazing...highly recommend it",
+            "gamer": 3,
+            "game": 2
+        }
+    },
+    {
+        "model": "raterprojectapi.review",
+        "pk": 2,
+        "fields": {
+            "review_body": "Game sucks ass",
+            "gamer": 2,
+            "game": 3
+        }
+    },
+    {
+        "model": "raterprojectapi.review",
+        "pk": 3,
+        "fields": {
+            "review_body": "Game is pretty good...great graphics and realistic",
+            "gamer": 1,
+            "game": 1
+        }
+    }
+]

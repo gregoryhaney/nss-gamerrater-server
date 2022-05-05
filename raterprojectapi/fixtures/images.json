@@ -1,0 +1,29 @@
+[
+    {
+        "model": "raterprojectapi.image",
+        "pk": 1,
+        "fields": {
+            "gamer": 2,
+            "game": 1,
+            "url": "https://www.googleimages.com/jk34k3933HR23"
+        }
+    },
+    {
+        "model": "raterprojectapi.image",
+        "pk": 2,
+        "fields": {
+            "gamer": 3,
+            "game": 3,
+            "url": "https://www.microsoft.com/images/3HR330999PR23"
+        }
+    },
+    {
+        "model": "raterprojectapi.image",
+        "pk": 3,
+        "fields": {
+            "gamer": 1,
+            "game": 2,
+            "url": "https://www.pixabayimages.net/free/bcWQjk34R23MPiq36"
+        }
+    }
+]

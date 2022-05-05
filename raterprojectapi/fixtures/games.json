@@ -1,0 +1,44 @@
+[
+    {
+        "model": "raterprojectapi.game",
+        "pk": 1,
+        "fields": {
+            "description": "Fun for the whole family",
+            "designer": "Parker Brothers",
+            "number_of_players": 6,
+            "time_to_play": 1,
+            "age_rec": 8,
+            "title": "Monopoly",
+            "release_year": 1965,
+            "gamer": 1
+        }
+    },
+    {
+        "model": "raterprojectapi.game",
+        "pk": 2,
+        "fields": {
+            "description": "Adult fun",
+            "designer": "Hasbro",
+            "number_of_players": 4,
+            "time_to_play": 2,
+            "age_rec": 21,
+            "title": "Strip Poker",
+            "release_year": 1975,
+            "gamer": 2
+        }
+    },
+    {
+        "model": "raterprojectapi.game",
+        "pk": 3,
+        "fields": {
+            "description": "Boredom buster",
+            "designer": "XBox",
+            "number_of_players": 1,
+            "time_to_play": 1,
+            "age_rec": 14,
+            "title": "Call of Duty - NSS Warfare",
+            "release_year": 2022,
+            "gamer": 3
+        }
+    }
+]
