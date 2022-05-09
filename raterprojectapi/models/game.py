@@ -9,3 +9,4 @@ class Game(models.Model):
     title = models.CharField(max_length=25)
     release_year = models.IntegerField()
     gamer = models.ForeignKey("Gamer", on_delete=models.CASCADE)
+    categories = models.ManyToManyField("Category")
