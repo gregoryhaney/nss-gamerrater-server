@@ -32,6 +32,7 @@ class GameView(ViewSet):
                         returns:
                             Response -- JSON serialized game instance
         """ 
+        # category = Category.objects.get(pk=request.data["category.id"])
         gamer = Gamer.objects.get(user=request.auth.user)
         game = Game.objects.create(
             title=request.data["title"],
@@ -42,6 +43,7 @@ class GameView(ViewSet):
             age_rec=request.data["age_rec"],
             description=request.data["description"],
             gamer=gamer
+        #    category=category
         )  
         
         serializer = CreateGameSerializer(game)
