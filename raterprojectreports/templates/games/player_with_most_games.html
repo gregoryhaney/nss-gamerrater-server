@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RaterProject Reports</title>
+  </head>
+  <body>
+    <h1>Player with Most Games in the Collection</h1>
+
+
+     <ol> 
+            {% for games in countgame_list %}
+            <li>
+                Gamer Handle: {{ games.handle }}
+                Number of Games in the Collection: {{games.NbrGames}}
+            </li>
+            {% endfor %}
+           
+    </ol>
+  </body>
+</html>

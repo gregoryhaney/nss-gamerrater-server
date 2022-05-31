@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RaterProject Reports</title>
+  </head>
+  <body>
+    <h1>Most-Reviewed Games</h1>
+
+
+     <ol> 
+            {% for games in reviews_list %}
+            <li>
+                Description: {{ games.description }}
+                Title: {{games.title}}
+                Number of Reviews: {{games.NbrReviews}}
+            </li>
+            {% endfor %}
+           
+    </ol>
+  </body>
+</html>

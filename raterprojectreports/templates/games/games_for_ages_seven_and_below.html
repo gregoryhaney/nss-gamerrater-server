@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RaterProject Reports</title>
+  </head>
+  <body>
+    <h1>Games Safe for Under Age 8</h1>
+
+
+     <ol> 
+            {% for games in agegame_list %}
+            <li>
+                Game Title: {{ games.title }}
+                Game Description: {{games.description}}
+                Age Recommendation: {{games.age}}
+            </li>
+            {% endfor %}
+           
+    </ol>
+  </body>
+</html>

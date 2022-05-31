@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RaterProject Reports</title>
+  </head>
+  <body>
+    <h1>Games Per Category</h1>
+
+
+     <ol> 
+            {% for games in categorygames_list %}
+            <li>
+                Category: {{games.category}}
+                Number of Games: {{games.NbrGames}}
+                Description: {{ games.description }}
+            </li>
+            {% endfor %}
+           
+    </ol>
+  </body>
+</html>
