@@ -10,7 +10,7 @@ class PlayerWithMostGamesList(View):
     def get(self, request):
         with connection.cursor() as db_cursor:
 
-            # TODO: Write a query to get the player with the most games in the collection
+            # Query to get the player with the most games in the collection
             db_cursor.execute("""
                 SELECT  gr.handle AS Gamer,
                         COUNT(g.id) AS NbrGames,
@@ -26,8 +26,8 @@ class PlayerWithMostGamesList(View):
             games_by_count = []
 
             for row in dataset:
-                # TODO: Create a dictionary called game that includes 
-                # the attributes from the row dictionary
+                # Create a dictionary called "game" that includes 
+                # the attributes from the "row" dictionary
                 game = {
                     'id': row['GameID'],
                     'handle': row['Gamer'],
@@ -38,10 +38,10 @@ class PlayerWithMostGamesList(View):
                 
                 game_dict = None
                 if game_dict:
-                    # If the game_dict is already in the games_by_rating list, append it to the list
+                    # If the "game_dict" is already in the "games_by_rating" list, append it to the list
                     game_dict['games'].append(game)
                 else:
-                    # If the game is not on the games_by_rating list, create and add the game to the list
+                    # If the game is not on the "games_by_rating" list, create and add the game to the list
                     games_by_count.append({
                         'handle': row['Gamer'],
                         'NbrGames': row['NbrGames']

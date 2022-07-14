@@ -1,4 +1,4 @@
-"""View module to handle request about categories"""
+"""View module to handle requests about categories"""
 
 from urllib import request
 from django.http import HttpResponseServerError
@@ -6,7 +6,6 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from raterprojectapi.models import Category
-
 
 
 class CategoryView(ViewSet):

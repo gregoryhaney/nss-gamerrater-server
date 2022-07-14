@@ -10,7 +10,7 @@ class BottomGamesByRatingList(View):
     def get(self, request):
         with connection.cursor() as db_cursor:
 
-            # TODO: Write a query to get Bottom five games by rating
+            # Query to get Bottom five games by rating
             db_cursor.execute("""
                 SELECT  r.rating AS Rating, 
                         g.description AS Desc,
@@ -28,8 +28,8 @@ class BottomGamesByRatingList(View):
             games_by_rating = []
 
             for row in dataset:
-                # TODO: Create a dictionary called game that includes 
-                # the attributes from the row dictionary
+                # Create a dictionary called "game" that includes 
+                # the attributes from the row dictionary.
                 game = {
                     'id': row['GameID'],
                     'description': row['Desc'],
@@ -41,10 +41,10 @@ class BottomGamesByRatingList(View):
                 
                 game_dict = None
                 if game_dict:
-                    # If the game_dict is already in the games_by_rating list, append it to the list
+                    # If the game_dict is already in the "games_by_rating" list, append it to the list
                     game_dict['games'].append(game)
                 else:
-                    # If the game is not on the games_by_rating list, create and add the game to the list
+                    # If the game is not on the "games_by_rating" list, create and add the game to the list
                     games_by_rating.append({
                         'description': row['Desc'],
                         'title': row['Title'],

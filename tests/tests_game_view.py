@@ -1,13 +1,13 @@
 #
 # If you need any resources created 
-# before a test is run, do it in setUp(). 
-# Below, set up FN does three things:
-#
-#  1. Registers a Gamer in the testing database.
-#  2. Captures the authentication Token from the response.
-#  3. Seeds the testing database with a GameType.
+#   before a test is run, do it in setUp(). 
+# Below, set up FN does three things:#
+#   1. Registers a "Gamer" in the testing database.
+#   2. Captures the authentication Token from the response.
+#   3. Seeds the testing database with a "GameType".
 #
 #  All FNs dealing with integration testing must start with " test_  "
+
 from rest_framework import status
 from rest_framework.test import APITestCase
 from rest_framework.authtoken.models import Token
@@ -15,12 +15,12 @@ from raterprojectapi.models import Game, Gamer
 from raterprojectapi.views.game import GameSerializer, CreateGameSerializer
 
 class GameTests(APITestCase):
-    # start with adding fixtures needed to run to build out the test DB
+    # Start with adding fixtures needed to run to build out the test DB
     fixtures = ['users', 'tokens', 'gamers', 'categories', 'games',
                 'images', 'ratings', 'reviews']
     
     def setUp(self):
-        # Get the 1st Gamer object from DB and add their token to headers
+        # Get the 1st "Gamer" object from DB and add their token to headers
         self.gamer = Gamer.objects.first()
         token = Token.objects.get(user=self.gamer.user)
         self.client.credentials(HTTP_AUTHORIZATION=f"Token {token.key}")
@@ -30,8 +30,8 @@ class GameTests(APITestCase):
         """ Test for creating a game"""
         url = "/games"
         
-        # define the game properties
-        # keys should match what the CREATE method is expecting
+        # Define the game properties.
+        # Keys should match what the CREATE method is expecting.
         game = {
             "description": "Sunday Rodeo",
             "designer": "The Fun Room Club2",
@@ -47,18 +47,18 @@ class GameTests(APITestCase):
         
         # The _expected_ output should come first when using an assertion with 2 arguments
         # The _actual_ output will be the second argument
-        # We _expect_ the status to be status.HTTP_201_CREATED and it _actually_ was response.status_code
+        # I _expect_ the status to be status.HTTP_201_CREATED and it _actually_ was response.status_code
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         
-        # Get the last game added to the database, it should be the one just created
+        # Get the last "Game" added to the database; it should be the one just created.
         new_game = Game.objects.last()
         
-        # Since the create method should return the serialized version of the newly created game,
-        # Use the serializer you're using in the create method to serialize the "new_game"
-        # Depending on your code this might be different
+        # Since the CREATE method should return the serialized version of the newly created game,
+        #   employ the serializer used in the CREATE method to serialize the "new_game".
+        
         expected = CreateGameSerializer(new_game)   
 
-        # Now we can test that the expected output matches what was actually returned
+        # Test that the expected output matches what was actually returned.
        
         self.assertEqual(expected.data, response.data)
         
@@ -70,7 +70,7 @@ class GameTests(APITestCase):
     def test_get_game(self):
         """Get Game Test
         """
-        # Grab a game object from the database
+        # Grab a "Game" object from the database
         game = Game.objects.first()
 
         url = f'/games/{game.id}'
@@ -128,7 +128,7 @@ class GameTests(APITestCase):
         # Refresh the game object to reflect any changes in the database
         game.refresh_from_db()
 
-        # assert that the updated value matches
+        # Assert that the updated value matches
         self.assertEqual(updated_game['description'], game.description)
         
       

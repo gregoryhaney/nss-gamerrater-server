@@ -1,4 +1,4 @@
-"""View module to handle request about games"""
+"""View module to handle requests about games"""
 
 from urllib import request
 from django.http import HttpResponseServerError
@@ -32,7 +32,6 @@ class GameView(ViewSet):
                         returns:
                             Response -- JSON serialized game instance
         """ 
-        # category = Category.objects.get(pk=request.data["category.id"])
         gamer = Gamer.objects.get(user=request.auth.user)
         game = Game.objects.create(
             title=request.data["title"],
@@ -43,7 +42,6 @@ class GameView(ViewSet):
             age_rec=request.data["age_rec"],
             description=request.data["description"],
             gamer=gamer
-        #    category=category
         )  
         
         serializer = CreateGameSerializer(game)
@@ -77,9 +75,9 @@ class GameSerializer(serializers.ModelSerializer):
         
        
 class CreateGameSerializer(serializers.ModelSerializer):
-     # the Serializer class determines how the Python data should be serialized
+     # the Serializer class determines how Python data should be serialized
         # to be sent back to the client.
-    # This is a new Serializer class that is being used to do input validation
+    # This is a new Serializer class that is being used for input validation.
     # It includes ONLY the fields expected from the client.
         
     """JSON serializer for game to validate/save the new game in the Create method

@@ -38,7 +38,6 @@ class GameReviewView(ViewSet):
             review_body=request.data["review_body"],
             game=game,
             gamer=gamer
-        #    category=category
         )  
         
         serializer = CreateReviewSerializer(review)
@@ -54,9 +53,9 @@ class ReviewSerializer(serializers.ModelSerializer):
         
        
 class CreateReviewSerializer(serializers.ModelSerializer):
-     # the Serializer class determines how the Python data should be serialized
+     # The Serializer class determines how Python data should be serialized
         # to be sent back to the client.
-    # This is a new Serializer class that is being used to do input validation
+    # This is a new Serializer class that is being used for input validation.
     # It includes ONLY the fields expected from the client.
         
     """JSON serializer for review to validate/save the new review in the Create method

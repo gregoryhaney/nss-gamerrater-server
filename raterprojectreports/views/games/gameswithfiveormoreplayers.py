@@ -10,7 +10,7 @@ class GamesWithFiveOrMorePlayersList(View):
     def get(self, request):
         with connection.cursor() as db_cursor:
 
-            # TODO: Write a query to get games for 5+ players
+            # Query to get games for 5+ players
             db_cursor.execute("""
                 SELECT  g.description AS Desc,
                         g.title AS Title, 
@@ -25,8 +25,8 @@ class GamesWithFiveOrMorePlayersList(View):
             games_with_fiveplus = []
 
             for row in dataset:
-                # TODO: Create a dictionary called game that includes 
-                # the attributes from the row dictionary
+                # Create a dictionary called "game" that includes 
+                # the attributes from the "row" dictionary
                 game = {
                     'id': row['GameID'],
                     'description': row['Desc'],
@@ -38,10 +38,10 @@ class GamesWithFiveOrMorePlayersList(View):
                 
                 game_dict = None
                 if game_dict:
-                    # If the game_dict is already in the games_by_rating list, append it to the list
+                    # If the 'game_dict' is already in the 'games_by_rating' list, append it to the list
                     game_dict['games'].append(game)
                 else:
-                    # If the game is not on the games_by_rating list, create and add the game to the list
+                    # If the game is not on the 'games_by_rating' list, create and add the game to the list
                     games_with_fiveplus.append({
                         'description': row['Desc'],
                         'title': row['Title'],

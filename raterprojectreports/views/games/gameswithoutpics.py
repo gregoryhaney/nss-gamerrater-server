@@ -10,7 +10,7 @@ class GamesWithoutPicsList(View):
     def get(self, request):
         with connection.cursor() as db_cursor:
 
-            # TODO: Write a query to get Games without Images
+            # Query to get Games without Images
             db_cursor.execute("""
                 SELECT  g.id AS GameID,
                         g.title AS Title,
@@ -26,8 +26,8 @@ class GamesWithoutPicsList(View):
             games_without_pics = []
 
             for row in dataset:
-                # TODO: Create a dictionary called game that includes 
-                # the attributes from the row dictionary
+                # Create a dictionary called 'game' that includes 
+                # the attributes from the 'row' dictionary
                 game = {
                     'id': row['GameID'],
                     'description': row['Desc'],
@@ -38,10 +38,10 @@ class GamesWithoutPicsList(View):
                 
                 game_dict = None
                 if game_dict:
-                    # If the game_dict is already in the games_by_rating list, append it to the list
+                    # If the 'game_dict' is already in the 'games_by_rating' list, append it to the list
                     game_dict['games'].append(game)
                 else:
-                    # If the game is not on the games_by_rating list, create and add the game to the list
+                    # If the game is not on the 'games_by_rating list', create and add the game to the list
                     games_without_pics.append({
                         'description': row['Desc'],
                         'title': row['Title']

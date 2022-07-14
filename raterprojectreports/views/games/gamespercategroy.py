@@ -5,12 +5,11 @@ from django.views import View
 
 from raterprojectreports.views.helpers import dict_fetch_all
 
-
 class GamesPerCategoryList(View):
     def get(self, request):
         with connection.cursor() as db_cursor:
 
-            # TODO: Write a query to get games per category
+            # Query to get games per category
             db_cursor.execute("""
                 SELECT  c.cat_name AS Category, 
                         g.description AS Desc,
@@ -28,8 +27,8 @@ class GamesPerCategoryList(View):
             games_by_category = []
 
             for row in dataset:
-                # TODO: Create a dictionary called game that includes 
-                # the attributes from the row dictionary
+                # Create a dictionary called "game" that includes 
+                # the attributes from the "row" dictionary
                 game = {
                     'id': row['GameID'],
                     'category': row['Category'],
@@ -41,10 +40,10 @@ class GamesPerCategoryList(View):
                 
                 game_dict = None
                 if game_dict:
-                    # If the game_dict is already in the games_by_rating list, append it to the list
+                    # If the "game_dict" is already in the "games_by_rating" list, append it to the list
                     game_dict['games'].append(game)
                 else:
-                    # If the game is not on the games_by_rating list, create and add the game to the list
+                    # If the game is not on the "games_by_rating" list, create and add the game to the list
                     games_by_category.append({
                         'category': row['Category'],
                         'description': row['Desc'],
